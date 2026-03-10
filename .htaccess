@@ -17,19 +17,6 @@ RewriteRule ^blog/([^/]+)/?$ ExpBlog.php?slug=$1 [L,QSA]
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^ %1 [R=301,L]
 
-# add X-Robots-Tag header for sensitive directories
-<IfModule mod_headers.c>
-    <Location /admin>
-        Header set X-Robots-Tag "noindex, nofollow"
-    </Location>
-    <Location /api>
-        Header set X-Robots-Tag "noindex, nofollow"
-    </Location>
-    <Location /screen>
-        Header set X-Robots-Tag "noindex, nofollow"
-    </Location>
-</IfModule>
-
 # Rewrite extensionless to .php if file exists
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
