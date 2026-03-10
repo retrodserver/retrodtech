@@ -4,30 +4,30 @@
 function seo_meta($title = '', $description = '', $keywords = '') {
     // title + optional meta-title
     if ($title) {
-        echo "<title>" . htmlspecialchars($title) . "</title>\n";
-        echo '<meta name="title" content="' . htmlspecialchars($title) . '">\n';
+        echo "<title>" . htmlspecialchars($title) . "</title>";
+        echo '<meta name="title" content="' . htmlspecialchars($title) . '">';
     }
 
     // description
     if ($description) {
-        echo '<meta name="description" content="' . htmlspecialchars($description) . '">\n';
+        echo '<meta name="description" content="' . htmlspecialchars($description) . '">';
     }
 
     // keywords (optional, not used by major engines but harmless)
     if ($keywords) {
-        echo '<meta name="keywords" content="' . htmlspecialchars($keywords) . '">\n';
+        echo '<meta name="keywords" content="' . htmlspecialchars($keywords) . '">';
     }
 
     // canonical URL (strip query parameters)
     $url = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'retrodtech.com') . ($_SERVER['REQUEST_URI'] ?? '/');
     $url = strtok($url, '?');
-    echo '<link rel="canonical" href="' . htmlspecialchars($url) . '">\n';
+    echo '<link rel="canonical" href="' . htmlspecialchars($url) . '">';
 
     // robots directive: noindex for admin/api/screen paths, index otherwise
     if (preg_match('#^/(admin|api|screen)(/|$)#', $_SERVER['REQUEST_URI'])) {
-        echo '<meta name="robots" content="noindex, nofollow">\n';
+        echo '<meta name="robots" content="noindex, nofollow">';
     } else {
-        echo '<meta name="robots" content="index, follow">\n';
+        echo '<meta name="robots" content="index, follow">';
     }
 }
 
@@ -41,5 +41,5 @@ function seo_organization_jsonld($options = []) {
         'logo' => $options['logo'] ?? 'https://retrodtech.com/img/retrod_logo_travel_tech.png',
         'sameAs' => $options['sameAs'] ?? []
     ];
-    echo '<script type="application/ld+json">' . json_encode($base, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</script>\n';
+    echo '<script type="application/ld+json">' . json_encode($base, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</script>';
 }
