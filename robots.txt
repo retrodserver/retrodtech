@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /tmp/
+Disallow: /cache/
+
+Sitemap: https://retrodtech.com/sitemap.xml

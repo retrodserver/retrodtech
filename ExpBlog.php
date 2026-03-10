@@ -180,6 +180,56 @@ $url = $row['url'];
             }
         }
 
+        /* Responsive text sizing for blog content */
+        .blog-content {
+            font-size: 1.1rem; /* Base size for medium screens */
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            font-size: 1rem; /* Base for meta */
+        }
+
+        .post-title {
+            font-size: 1.5rem; /* Base for title */
+        }
+
+        @media (min-width: 768px) {
+            .blog-content {
+                font-size: 1.25rem; /* Larger on tablets/desktops */
+            }
+            .blog-meta {
+                font-size: 1.1rem;
+            }
+            .post-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .blog-content {
+                font-size: 1rem; /* Smaller on large screens to prevent overly large text */
+            }
+            .blog-meta {
+                font-size: 1rem;
+            }
+            .post-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .blog-content {
+                font-size: 0.95rem; /* Even smaller on very large screens */
+            }
+            .blog-meta {
+                font-size: 0.95rem;
+            }
+            .post-title {
+                font-size: 1.4rem;
+            }
+        }
+
         .post-thumbnail-wrapper {
             display: flex;
             justify-content: center;
@@ -231,7 +281,7 @@ $url = $row['url'];
                   </div>
                   <div class="post-content-wrapper">
                       <div class="post-meta">
-                          <ul class="d-flex gap-3 py-3 fs-5">
+                          <ul class="d-flex gap-3 py-3 blog-meta">
                               <li><span class="byline"><i class="far fa-user"></i> <span
                                           class="author vcard">Retrod</span></span></li>
                               <li><span class="posted-on"><i class="far fa-calendar-check"></i> <a
@@ -241,11 +291,11 @@ $url = $row['url'];
                                               datetime="<?php echo $date; ?>"><?php echo date("d M Y", strtotime($date)); ?></time></a></span></li>
                           </ul>
                       </div>
-                      <h3 class="post-title fw-bold fs-3 py-2"><a
+                      <h3 class="post-title fw-bold py-2"><a
                               href="<?php echo $url; ?>"
                               target="_blank" rel="bookmark"><?php echo $title; ?></a></h3>
   		 <div class="post-excerpt row">
-                        <div class="fs-5"><?php echo $content; ?></div>
+                        <div class="blog-content"><?php echo $content; ?></div>
                      </div>
                   </div>
               </div>
