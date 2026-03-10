@@ -1,19 +1,18 @@
 <!doctype html>
+<?php
+require_once __DIR__ . '/include/seo.php';
+
+$pageTitle       = "Contact Retrod Technologies | Hotel Software & Travel Tech Solutions";
+$pageDescription = "Contact Retrod Technologies for Hotel Management Software, Booking Engine, PMS, and Travel Technology Solutions.";
+$pageKeywords    = "contact retrod technologies, hotel technology support, travel tech inquiries";
+?>
+
 <html lang="en-US">
 
 <head>
+    <?php seo_meta($pageTitle, $pageDescription, $pageKeywords); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Contact Retrod Technologies | Hotel Software & Travel Tech Solutions</title>
-
-    <meta name="description"
-        content="Contact Retrod Technologies for Hotel Management Software, Booking Engine, PMS, and Travel Technology Solutions. Get in touch with our team for business inquiries and support.">
-
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Retrod Technologies">
-
-    <link rel="canonical" href="https://retrodtech.com/contact">
 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 

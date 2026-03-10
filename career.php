@@ -1,21 +1,19 @@
 <!doctype html>
+<?php
+require_once __DIR__ . '/include/seo.php';
+
+$pageTitle       = "Careers at Retrod Technologies | Join Our Hotel Tech Team";
+$pageDescription = "Explore career opportunities at Retrod Technologies. Join our innovative team building hotel management software and travel technology solutions.";
+$pageKeywords    = "retrod careers, hotel tech jobs, travel technology careers";
+?>
 
 <html lang="en-US">
 
 
 <head>
+    <?php seo_meta($pageTitle, $pageDescription, $pageKeywords); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Careers at Retrod Technologies | Join Our Hotel Tech Team</title>
-
-    <meta name="description"
-        content="Explore career opportunities at Retrod Technologies. Join our innovative team building hotel management software, booking engines, and travel technology solutions.">
-
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Retrod Technologies">
-
-    <link rel="canonical" href="https://retrodtech.com/career">
 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 

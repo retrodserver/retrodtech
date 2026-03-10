@@ -1,20 +1,29 @@
-<?php header("Referrer-Policy: strict-origin-when-cross-origin"); ?>
-<?php header("Referrer-Policy: strict-origin-when-cross-origin"); ?>
+<?php
+require_once __DIR__ . '/include/seo.php';
+
+// page-specific variables for SEO
+$pageTitle       = "Retrod || India's Leading Travel Tech Company";
+$pageDescription = "Welcome to Retrod, Best Hotel-Tech Company Across The India, Your Direct Booking Master and Unlock Your Hotels Digital Presence With Retrod.";
+$pageKeywords    = "Best Hotel Software, Booking Engine, Hotel Management Software, Travel Technology Solutions";
+
+header("Referrer-Policy: strict-origin-when-cross-origin");
+?>
 
 <!doctype html>
 <html lang="en-US">
 
 <head>
+    <?php seo_meta($pageTitle, $pageDescription, $pageKeywords); ?>
+    <!-- structured data -->
+    <?php seo_organization_jsonld(["sameAs" => [
+        "https://www.facebook.com/retrodtech",
+        "https://twitter.com/retrodtech",
+        "https://www.linkedin.com/company/retrodtech"
+    ]]); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta https-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <meta name="description"
-        content="Welcome to Retrod, Best Hotel-Tech Company Across The India, Your Direct Booking Master and Unlock Your Hotels Digital Presence With Retrod,Retrod Technologies offers cutting-edge IT solutions, software development, cloud computing, and digital transformation services. Partner with us to grow your business.">
-    <meta name="keywords"
-        content="Best Hotel Software,Best Booking Engine,Best Booking Software,Hotel Website development,Booking Engine,Hotel software,Hotel Management Software,Best Hotel Software in Odisha,Best Hotel Software in India,Hotel Photography,Mail for hotel,Digital marketing for Hotel,Travel Technology Solutions,Innovative Travel Tech,Advanced Travel Solutions,Tech-Driven Travel Innovations,Smart Travel Technology,Travel Management Systems,Cutting-Edge Travel Tech,Travel Software Solutions,Next-Gen Travel Tech,Travel Tech Platforms,IT solutions, software development, cloud computing, digital transformation, IT consulting, Cloud-based PMS,Contactless Check-in,Smart Hospitality Solutions,Hotel Business Intelligence,Cloud Hospitality Solutions,Hotel Digital Campaigns,Hotel Mobile Check-in,Hotel Data Analytics,Online Travel Technology,Automated Hotel Systems,Intelligent Hotel Operations,Guest Communication Tools,Travel Agency Solutions,Vacation Rental Management,Hospitality Cloud Solutions,Mobile-Friendly Hotel Solutions,Hotel Wi-Fi Management,Travel Tech Innovations,Hotel Booking Optimization,Secure Payment Gateways,Global Distribution System (GDS),OTA Integration Software,Hotel API Integration,Hotel Staff Management,Travel Portal Development,Property Management Software,Inventory Management,Guest Check-in and Check-out,Room Booking System">
-    <meta name="author" content="Retrod">
-    <title>Retrod || India's Leading Travel Tech Company</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
